@@ -1,16 +1,28 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+//custom hook
+function useCounter() {
+  const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>
-        hi there
-      </div>
-    </>
-  )
+  function increaseCount() {
+    setCount(count + 1)
+    // setcount (c => c +1) 
+  }
+  return {
+    count: count,
+    increaseCount: increaseCount
+  }
 }
 
-export default App
+function App() {
+  const {count, increaseCount} = useCounter();
+
+  return (
+    <div>
+     <button onClick={increaseCount}>Increase {count}</button>
+
+     </div>
+  )
+}
+  
