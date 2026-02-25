@@ -27,7 +27,7 @@ function Decrease({setCount}) {
      setCount (C => C - 1);
   }
   return <div>
-    <button> onClick={Decrease} Decrease</button>
+    <button onClick={Decrease}>Decrease</button>
     </div>
 }
 
@@ -37,7 +37,7 @@ function Increase({setCount}) {
     setCount (c => c + 1);
   }
   return <div>
-    <button> onClick={Increase} Increase</button>
+    <button onClick={Increase}>Increase</button>
     </div>
 }
 
